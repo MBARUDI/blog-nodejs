@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('./parciais/head.ejs', { titulo: titulo }) %>
+<body>
+   <%- include('./parciais/nav.ejs') %>
+    <div class="criar-conteudo-blog">
+        <form>
+            <label for="titulo">Titulo do blog</label>
+            <input type="text" id="titulo" name="titulo" required>
+            <label for="conteudo">Conteúdo do blog</label>
+            <input type="text" id="conteudo" name="conteudo" required>
+            <label for="autor">Autor do blog</label>
+            <input type="text" id="autor" name="autor" required>
+            <button type="submit">Criar Blog</button>
+            <br>
+        </form>
+        
+        </ul>
+    </nav>
+    <%- include('./parciais/footer.ejs') %>
+</body>
+</html>
