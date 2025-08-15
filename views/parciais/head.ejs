@@ -1,95 +1,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Currículo de Marcelo David Barudi, Engenheiro Civil, Segurança do Trabalho e Especialista em TI.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
     <title><%= titulo %></title>
     <style>
         
-        @import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+    
+    /* ========================================================
+    Configurações e Fontes Globais
+    ======================================================== 
+    */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+    
+    :root {
+        /* Cores */
+        --primary-color: #003366;
+        --secondary-color: #7594ce;
+        --background-color: #dadbcc;
+        --light-gray: #f4f4f4;
+        --border-color: #ccc;
+        --white-color: #fff;
+        --text-color: #333;
+    }
 
+    body {
+        font-family: 'Noto Sans', sans-serif;
+        background-color: var(--background-color);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: var(--text-color);
+    }
+    
+    /* ========================================================
+    Layout e Componentes Principais
+    ======================================================== 
+    */
+    .container-fluid {
+        padding: 0 15px;
+    }
+    
+    .tela {
+        border: 1px solid var(--border-color);
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        background: var(--white-color);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+    }
+
+    .conteudo-sobre {
+        max-width: 800px; /* Para melhor legibilidade em telas largas */
+        margin: 2rem auto; /* Centraliza o bloco e adiciona espaçamento */
+        padding: 2rem;
+    }
+
+    .conteudo-sobre p {
+        text-align: center;
+    }
+
+    .conteudo-blog {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Espaçamento entre os blogs */
+        align-items: center; /* Centraliza os blogs na página */
+    }
+
+    section {
+        margin-bottom: 28px;
+    }
+    
+    /* ========================================================
+    Tipografia e Títulos
+    ======================================================== 
+    */
+    h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+        color: var(--primary-color);
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .tela h1 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        padding-top: 0;
+        font-size: 2.5em;
+    }
+    
+    ul, li, p {
+        text-align: left;
+        max-width: 100%;
+        word-break: break-word;
+    }
+    
+    /* ========================================================
+    Navegação e Footer
+    ======================================================== 
+    */
+    nav {
+        background-color: var(--secondary-color);
+        color: var(--white-color);
+        padding: 10px;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+    
+    nav ul li a {
+        color: var(--white-color);
+        text-decoration: none;
+    }
+    
+    .titulo-site h1, .titulo-site p {
+        margin: 0;
+    }
+    
+    .titulo-site p {
+        font-size: 14px;
+    }
+
+    footer {
         
+        background-color: #000;
+        color: var(--white-color);
+        padding: 2rem 0;
+    }
+
+    footer .tela {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    footer .tela h2 {
+        color: var(--white-color);
+    }
+
+    footer .tela a {
+        color: var(--white-color);
+        text-decoration: none;
+    }
+
+    footer .p-2 {
+        background-color: #444; /* Fundo cinza para os links */
+        border: none;
+        border-radius: 5px;
+    }
+    
+    .footer-conteudo {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .coluna-footer {
+        flex-basis: 300px;
+        margin: 1rem;
+    }
+
+    .coluna-footer h3 {
+        border-bottom: 2px solid var(--white-color);
+        padding-bottom: 0.5rem;
+    }
+
+    .coluna-footer ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .coluna-footer a {
+        color: var(--white-color);
+        text-decoration: none;
+    }
+
+    .copyright {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #555;
+    }
+
+    .redes-sociais li {
+        margin-bottom: 0.5rem;
+    }
+
+    .redes-sociais i {
+        margin-right: 0.5rem;
+    }
+    
+    /* ========================================================
+    Estilos de Componentes (tags, habilidades, etc.)
+    ======================================================== 
+    */
+    .p-3, .p-2 {
+        background-color: var(--light-gray);
+        border: 1px solid #e9ecef;
+        border-radius: 4px;
+        text-align: center;
+        padding: 8px 12px; /* Adicionado padding para um visual mais agradável */
+        margin: 4px; /* Adicionado margem para espaço entre os itens */
+    }
+
+    .p-2 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-align: left;
+    }
+
+    /* ========================================================
+    Ajustes de Layout com Flexbox
+    ======================================================== 
+    */
+    ul li {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 8px;
+        gap: 8px; /* Melhoria: Usar `gap` para espaçamento entre o ícone e o texto */
+    }
+
+    .lista-centralizada {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza os itens da lista */
+        padding-left: 0;
+    }
+
+    /* Estilos para cards, se forem usados */
+    .card {
+        border: 1px solid #eee;
+        margin-bottom: 15px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        border-radius: 8px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    
+    /* ========================================================
+    Responsividade
+    ======================================================== 
+    */
+    @media (max-width: 800px) {
+        .tela, .container-fluid {
+            padding: 8px;
+        }
+    }
+    
+    /* ========================================================
+    Estilos para Impressão (PDF)
+    ======================================================== 
+    */
+    @media print {
         body {
-            font-family: notosans, sans-serif;
-            background-color: #dadbcc;
             margin: 0;
             padding: 0;
+            font-size: 11pt;
+            line-height: 1.25;
+            color: #000;
         }
-        nav {
-            background-color: #7594ce;
-            color: white;
-            padding: 10px;
+    
+        /* Garantindo que as cores sejam impressas */
+        body, nav, footer, a[style*="background"] {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        
+        /* Limpeza de elementos de tela */
+        .tela, .container-fluid, .conteudo-blog, .criar-conteudo-blog {
+            padding: 10 !important;
+            margin: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
         }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
+        
+        h1, h2, h3, h4, h5 {
+            color: #000 !important;
+            text-align: left !important;
+            margin-top: 15px !important;
+            margin-bottom: 5px !important;
         }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
+        
+        .tela h1 {
+            text-align: center !important;
+            margin-top: 0 !important;
+            margin-bottom: 20px !important;
+            font-size: 2.2em !important;
         }
-        .conteudo-blog, .criar-conteudo-blog {
-            padding: 20px;
+        
+        .btn, nav, footer {
+            display: none !important;
         }
-        .titulo-site h1 {
-            margin: 0;
+
+        section {
+            margin-bottom: 15px !important;
         }
-        .titulo-site p {
-            margin: 0;
-            font-size: 14px;
+        
+        .p-2, .p-3 {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            margin-bottom: 1px !important;
+            text-align: left !important;
         }
-        footer {
-  background-color: #333;
-  color: #fff;
-  padding: 2rem 0;
-}
+        
+        ul li {
+            padding-left: 1.2em !important;
+            text-indent: -1.2em !important;
+            display: list-item !important; /* Volta ao estilo de lista padrão para impressão */
+            margin-bottom: 5px !important;
+        }
+        
+        /* Controlando quebras de página */
+        .tela + .tela {
+            page-break-before: always !important;
+        }
 
-.footer-conteudo {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
+        .tela:last-child {
+            page-break-after: avoid !important;
+            page-break-inside: avoid !important;
+        }
+    }
 
-.coluna-footer {
-  flex-basis: 300px;
-  margin: 1rem;
-}
-
-.coluna-footer h3 {
-  border-bottom: 2px solid #fff;
-  padding-bottom: 0.5rem;
-}
-
-.coluna-footer ul {
-  list-style: none;
-  padding: 0;
-}
-
-.coluna-footer a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.copyright {
-  text-align: center;
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid #555;
-}
-
-/* Estilos para os ícones de redes sociais */
-.redes-sociais li {
-  margin-bottom: 0.5rem;
-}
-
-.redes-sociais i {
-  margin-right: 0.5rem;
-}
     </style>
     </head>

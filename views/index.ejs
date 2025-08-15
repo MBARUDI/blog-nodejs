@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
 <%- include('./parciais/head.ejs', { titulo: titulo }) %>
@@ -9,13 +10,13 @@
     <%- include('./parciais/nav.ejs') %>
 
     <div class="conteudo-blog">
-        <h2>Bem-vindo ao Meu Blog!</h2>
+        
         <% if (blogs && blogs.length > 0) { %>
-            <ul>
+            <ul><br>
                 <% blogs.forEach(blog => { %>
                     <li>
-                        <h3><%= blog.titulo %></h3>
-                        <p><%= blog.conteudo %></p>
+                       <h5><%= blog.titulo %>
+                        <%= blog.conteudo %></h5>
                     </li>
                 <% }) %>
             </ul>
@@ -23,6 +24,118 @@
             <p>Nenhum blog encontrado. Que tal criar um novo? 😉</p>
         <% } %>
     </div>
+   
+
+
+<div class="container-fluid">
+    <div id="curriculo-content">
+
+        <div class="tela">
+            <section class="mb-4">
+                <h1 class="text-center">Marcelo David Barudi</h1>
+                <h3>📞 Contato</h3>
+                <ul class="lista-centralizada">
+                    <li contenteditable="true">📧 mdbarudi@gmail.com</li>
+                    <li contenteditable="true">📱 (11) 98591-9330 | (11) 2640-4977</li>
+                    <li contenteditable="true">🏠 Rua Ministro José G. R. Alckmin, 2258 - SP</li>
+                </ul>
+            </section>
+
+           
+
+            <section class="mb-4">
+                <h3>🧠 Habilidades</h3>
+                <div class="container text-center">
+                    <div class="row g-2">
+                        <div class="col-6"><div class="p-3">Engenharia Civil</div></div>
+                        <div class="col-6"><div class="p-3">Análise de Dados</div></div>
+                        <div class="col-6"><div class="p-3">Manutenção Predial</div></div>
+                        <div class="col-6"><div class="p-3">Gestão Empresarial</div></div>
+                        <div class="col-6"><div class="p-3">Segurança do Trabalho</div></div>
+                        <div class="col-6"><div class="p-3">Cibersegurança</div></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <div class="tela">
+            <section class="mb-4">
+                <h3>💼 Parcerias</h3>
+                <ul class="lista-centralizada">
+                    <li contenteditable="true">Máximo Brasil Manutenção :</li>
+                    <li contenteditable="true">FLEXMUNDI </li>
+                    <li contenteditable="true">EZTEC </li>
+                    <li contenteditable="true">CDG Construtora </li>
+                </ul>
+            </section>
+
+            
+        
+            <section class="mb-4">
+                <h3>💻 Tecnologias</h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="p-2">💻 Linux</div>
+                            <div class="p-2">💻 Word</div>
+                            <div class="p-2">💻 Windows</div>
+                            <div class="p-2">💻 Excel</div>
+                            <div class="p-2">💻 Power Point</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-2">💻 AutoCAD</div>
+                            <div class="p-2">💻 Outlook</div>
+                            <div class="p-2">💻 Msproject</div>
+                            <div class="p-2">💻 PowerBI</div>
+                            <div class="p-2">💻 Inteligência Artificial</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="p-2">💻 Data Science</div>
+                            <div class="p-2">💻 Python</div>
+                            <div class="p-2">💻 Java</div>
+                            <div class="p-2">💻 HTML/CSS</div>
+                            <div class="p-2">💻 JavaScript</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-2">💻 React</div>
+                            <div class="p-2">💻 Segurança de Redes</div>
+                            <div class="p-2">💻 SQL</div>
+                            <div class="p-2">💻 Git</div>
+                            <div class="p-2">💻 GitHub</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-4">
+                <h3>🏙 Atuação Técnica em Engenharia</h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="p-2">⛑️ Obra</div>
+                            <div class="p-2">⛑️ Reformas</div>
+                            <div class="p-2">⛑️ Manutenção Predial</div>
+                            <div class="p-2">⛑️ Gerenciamento de obras</div>
+                            <div class="p-2">⛑️ Fiscalização de obras</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-2">⛑️ Laudos Técnicos</div>
+                            <div class="p-2">⛑️ Avaliações Imobiliárias</div>
+                            <div class="p-2">⛑️ Projetos de Engenharia</div>
+                            <div class="p-2">⛑️ Projetos de Segurança do Trabalho</div>
+                            <div class="p-2">⛑️ Negociação de Contratos </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+
+
     <!-- Include the footer partial -->
     <%- include('./parciais/footer.ejs') %>
 </body>

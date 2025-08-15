@@ -10,9 +10,12 @@ app.listen(3001);
 app.get('/', (req, res) => {
   // passando parametros para o body
   const blogs = [
-    { titulo: 'Chamander', conteudo: 'A ponta de seu rabo está constantemente em chamas e se for apagada pode resultar em sua morte' },
-    { titulo: 'Squirtle', conteudo: 'Seu casco reduz a resistência contra a água fazendo com que ele nade mais rápido' },
-    { titulo: 'Bulbasaur', conteudo: 'Ao evoluir o bulbo começa a desabrochar até se tornar uma grane flor ' }
+    { titulo: 'Máximo Brasil:', conteudo: '  Engenharia, Manutenção Predial, Segurança do trabalho ' },
+    { titulo: 'Diretor:', conteudo: '  Engenheiro Civil Marcelo Barudi' },
+    { titulo: 'Serviços:', conteudo: '  Engenharia, Manutenção Predial, Segurança do trabalho ' },
+    { titulo: 'Missão :', conteudo: ' Proporcionar soluções de manutenção e tecnologia ' },
+    { titulo: 'Visão :', conteudo: ' Ser a principal referência em serviços de manutenção e tecnologia  ' },
+    { titulo: 'Valores :', conteudo: '  Busca contínua por qualidade superior em tudo que fazemos ' }
   ];
 
   res.render('index', { titulo: 'Home' , blogs });
@@ -21,7 +24,7 @@ app.get('/sobre', (req, res) => {
   res.render('sobre', { titulo: 'Sobre' });
 });
 app.get('/sobrenos', (req, res) => {
-  res.redirect('/sobre', { titulo: 'Sobre Nós' });
+  res.redirect('/sobre');
 });
 
 app.get('/blog/criar', (req, res) => {
