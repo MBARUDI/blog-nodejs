@@ -64,10 +64,47 @@
     }
 
     .conteudo-blog {
+        max-width: 800px;
+        margin: 2rem auto; /* Centraliza o bloco de conteúdo */
+        padding: 0 20px;
+    }
+
+    /* ========================================================
+    Estilos da Lista de Blogs
+    ========================================================
+    */
+    .lista-blogs {
         display: flex;
         flex-direction: column;
-        gap: 20px; /* Espaçamento entre os blogs */
-        align-items: center; /* Centraliza os blogs na página */
+        gap: 1.5rem; /* Espaço entre os posts */
+    }
+
+    .blog-preview {
+        padding: 1.5rem;
+        border-radius: 8px;
+        background: var(--white-color);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        text-decoration: none;
+        color: var(--text-color);
+        transition: box-shadow 0.3s ease;
+        display: block; /* Para que o link ocupe toda a área */
+    }
+
+    .blog-preview:hover {
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    .blog-preview h3 {
+        text-align: left; /* Garante alinhamento à esquerda, sobrepondo a regra global */
+        color: var(--primary-color);
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .blog-preview p {
+        text-align: left; /* Garante alinhamento à esquerda */
+        margin: 0;
+        color: #555;
     }
 
     section {
